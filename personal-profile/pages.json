@@ -1,0 +1,46 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "Github Profile",
+        "navigationBarBackgroundColor": "#EEF3FF",
+        "navigationBarTextStyle": "#000000",
+        "backgroundColor": "#0",
+        "backgroundColorTop": "#ffffff",
+        "backgroundColorBottom": "#ffffff",
+        "enablePullDownRefresh": false,
+        "navigationStyle": "default"
+      }
+    }
+  ],
+
+  "globalStyle": {
+    "navigationBarTextStyle": "#000000",
+    "navigationBarTitleText": "Github Profile",
+    "navigationBarBackgroundColor": "#EEF3FF",
+    "backgroundColor": "#ffffff",
+    "backgroundColorTop": "#ffffff",
+    "backgroundColorBottom": "#ffffff",
+    "backgroundTextStyle": "dark"
+  },
+
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "^fa-(.*)": "@/components/fa-$1/fa-$1.vue"
+    }
+  },
+
+  "condition": {
+    "current": 0,
+    "list": [
+      {
+        "name": "Profile",
+        "path": "pages/index/index",
+        "query": ""
+      }
+    ]
+  }
+}
