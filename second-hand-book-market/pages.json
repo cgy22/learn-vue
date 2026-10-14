@@ -1,0 +1,95 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "瓦莱希雅大学 · 校园二手书市",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/collect/collect",
+      "style": {
+        "navigationBarTitleText": "我的收藏",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/publish/publish",
+      "style": {
+        "navigationBarTitleText": "发布书籍",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/mine/mine",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    {
+      "path": "pages/detail/detail",
+      "style": {
+        "navigationBarTitleText": "书籍详情",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#FFFFFF"
+      }
+    }
+  ],
+
+  "tabBar": {
+    "color": "#6B7A88",
+    "selectedColor": "#A51515",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "书市",
+        "iconPath": "static/tab/home.png",
+        "selectedIconPath": "static/tab/home-on.png"
+      },
+      {
+        "pagePath": "pages/collect/collect",
+        "text": "收藏",
+        "iconPath": "static/tab/collect.png",
+        "selectedIconPath": "static/tab/collect-on.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "static/tab/publish.png",
+        "selectedIconPath": "static/tab/publish-on.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/tab/mine.png",
+        "selectedIconPath": "static/tab/mine-on.png"
+      }
+    ]
+  },
+
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "瓦莱西亚大学 · 校园二手书市",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF"
+  }
+}
