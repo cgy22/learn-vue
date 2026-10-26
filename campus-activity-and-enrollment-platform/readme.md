@@ -218,6 +218,15 @@ When `disabled` is `true`, the button shows “Activity ended”, is greyed out,
 
 This project is licensed under the **MIT License**.
 
+### Third-Party Assets
+
+TabBar icons are derived from [Microsoft Fluent Emoji](https://github.com/microsoft/fluentui-emoji).
+
+Copyright (c) Microsoft Corporation.
+
+Licensed under the MIT License. The full license text is available at:
+https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE
+
 ---
 
 ## ©️ Copyright
@@ -449,6 +458,15 @@ static/tabbar/mine-active.png
 ## 📜 许可证
 
 本项目采用 **MIT 许可证**。
+
+### 第三方素材
+
+TabBar 图标来源于 [Microsoft Fluent Emoji](https://github.com/microsoft/fluentui-emoji)。
+
+Copyright (c) Microsoft Corporation.
+
+依据 MIT 许可证授权。完整许可证文本见：
+https://github.com/microsoft/fluentui-emoji/blob/main/LICENSE
 
 ---
 
