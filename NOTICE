@@ -1,0 +1,37 @@
+NOTICE
+
+This repository contains both source code and image assets, which are
+licensed separately.
+
+1. Source Code
+
+   Unless otherwise stated, the source code in this repository is licensed
+   under the MIT License. See the `LICENSE` file for the full text.
+
+2. Image Assets (Proprietary, CC BY-NC-ND 4.0)
+
+   The following image assets are original works and are NOT covered by the
+   MIT License. They are licensed under the Creative Commons
+   Attribution-NonCommercial-NoDerivatives 4.0 International License
+   (CC BY-NC-ND 4.0). All rights are reserved by the copyright holder.
+
+   - All contents under `second-hand-book-market/static/books/`
+   - All contents under `second-hand-book-market/static/mine/`
+   - `personal-profile/static/banner-main.jpg`
+   - `personal-profile/static/logo.png`
+
+   Under CC BY-NC-ND 4.0, you may share these assets for non-commercial
+   purposes only, provided that appropriate credit is given and the assets
+   are not modified. You may not use them for commercial purposes and you may
+   not distribute modified versions.
+
+   To view a copy of this license, visit:
+   https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+   Attribution: Copyright © 2026. All Rights Reserved.
+
+3. Everything Else
+
+   Any content not explicitly listed above is not covered by the MIT License
+   unless stated otherwise. If in doubt, please contact the repository owner
+   before reuse.
