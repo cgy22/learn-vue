@@ -1,4 +1,4 @@
-# 🎓 Campus Activity & Enrollment Platform (WeChat Mini Program / uni-app)
+# 🎓 Campus Activity & Enrollment Platform
 
 ---
 
@@ -59,11 +59,69 @@ project-root/
 ## 🚀 Run Steps
 
 1. 📥 Import the project into HBuilderX (Vue 3 / Vite template).
-2. 🖼️ Make sure `static/tabbar/home.png` and `static/tabbar/mine.png` exist (81×81 PNG, transparent background).
+2. 🖼️ Make sure four TabBar icons exist under `static/tabbar/`: `home.png`, `home-active.png`, `mine.png`, `mine-active.png` (81×81 PNG, transparent background).
 3. ▶️ Run to WeChat DevTools or H5:
    - **WeChat Mini Program**: Run → Run to Mini Program Simulator. If the API is blocked by domain whitelist, enable “Do not verify legal domain names” in DevTools settings for local testing.
    - **H5**: Run → Run to Browser.
 4. ✅ On first launch, the Home page requests activities and writes `activity_cache`. Open a card to view the detail page, enroll, and check the Mine tab.
+
+---
+
+## 👩‍💻 For Developers
+
+### 📦 Repository
+
+Source code: `https://github.com/cgy22/learn-vue/tree/main/campus-activity-and-enrollment-platform`
+
+The project is a sub-directory of the `learn-vue` repository. Clone the whole repository and open the `campus-activity-and-enrollment-platform` folder in HBuilderX.
+
+```bash
+git clone https://github.com/cgy22/learn-vue.git
+cd learn-vue/campus-activity-and-enrollment-platform
+```
+
+### 🛠️ How to modify activity content
+
+Activity titles and descriptions are **not** taken directly from the API. They come from the local `ACTIVITY_CONTENT` map in `pages/index/index.vue`, keyed by activity `id`:
+
+```javascript
+const ACTIVITY_CONTENT = {
+  1: { title: '...', description: '...', category: '讲座', contact: '538200138000' },
+  2: { title: '...', description: '...', category: '文体', contact: '548600138001' },
+  // ...
+}
+```
+
+- To edit an activity, change the corresponding entry.
+- To add one, append a new `id` entry. Unconfigured IDs are skipped (or fall back, depending on your mapping).
+- `category` must be one of `讲座` / `文体` / `志愿`, otherwise category filtering will not match.
+- After editing, refresh the Home page so `activity_cache` is rewritten; the Detail and Mine pages read from that cache.
+
+### 🖼️ How to replace TabBar icons
+
+Put four 81×81 transparent PNGs into `static/tabbar/`:
+
+```
+static/tabbar/home.png
+static/tabbar/home-active.png
+static/tabbar/mine.png
+static/tabbar/mine-active.png
+```
+
+`pages.json` maps `iconPath` to the normal state and `selectedIconPath` to the active state. Keep the file names unchanged to avoid editing `pages.json`.
+
+### 🎨 How to change theme colors
+
+- Light primary: `LIGHT_PRIMARY` in `composables/useTheme.js`.
+- Dark primary: `DARK_PRIMARY` in the same file.
+- If you change `DARK_PRIMARY`, also update `themeColorLight` (rgba) and `themeColorRgb` accordingly.
+
+### 🚀 Build & Release (WeChat Mini Program)
+
+1. In HBuilderX: **发行 → 小程序-微信**, which generates the Mini Program build.
+2. Open the generated `dist/dev/mp-weixin` (or `dist/build/mp-weixin`) folder in WeChat DevTools.
+3. Fill in your AppID, check the project, then **上传** to the WeChat platform for review and release.
+4. The API domain `jsonplaceholder.typicode.com` must be added to the request domain whitelist in the Mini Program admin console before release; for local debugging, enable “Do not verify legal domain names”.
 
 ---
 
@@ -172,7 +230,7 @@ Copyright © 2026. All Rights Reserved.
 
 ---
 
-# 🎓 校园活动信息与报名平台（微信小程序 / uni-app）
+# 🎓 校园活动信息与报名平台
 
 ---
 
@@ -233,11 +291,69 @@ Copyright © 2026. All Rights Reserved.
 ## 🚀 运行步骤
 
 1. 📥 用 HBuilderX 导入项目（Vue 3 / Vite 模板）。
-2. 🖼️ 确认 `static/tabbar/home.png` 与 `static/tabbar/mine.png` 存在（81×81 PNG，透明背景）。
+2. 🖼️ 确认 `static/tabbar/` 下存在四个 TabBar 图标：`home.png`、`home-active.png`、`mine.png`、`mine-active.png`（81×81 PNG，透明背景）。
 3. ▶️ 运行到微信开发者工具或 H5：
    - **微信小程序**：运行 → 运行到小程序模拟器。若 API 域名未在白名单，在开发者工具设置中勾选「不校验合法域名」用于本地调试。
    - **H5**：运行 → 运行到浏览器。
 4. ✅ 首次启动时首页请求活动并写入 `activity_cache`。点击卡片进入详情页，报名后到「我的」页查看。
+
+---
+
+## 👩‍💻 开发者说明
+
+### 📦 仓库位置
+
+源码地址：`https://github.com/cgy22/learn-vue/tree/main/campus-activity-and-enrollment-platform`
+
+项目是 `learn-vue` 仓库下的子目录。克隆整个仓库后，在 HBuilderX 中打开 `campus-activity-and-enrollment-platform` 文件夹即可。
+
+```bash
+git clone https://github.com/cgy22/learn-vue.git
+cd learn-vue/campus-activity-and-enrollment-platform
+```
+
+### 🛠️ 如何修改活动内容
+
+活动的标题与描述**不是**直接取自 API，而是来自 `pages/index/index.vue` 中的本地 `ACTIVITY_CONTENT` 映射表，按活动 `id` 键取值：
+
+```javascript
+const ACTIVITY_CONTENT = {
+  1: { title: '...', description: '...', category: '讲座', contact: '538200138000' },
+  2: { title: '...', description: '...', category: '文体', contact: '548600138001' },
+  // ...
+}
+```
+
+- 改某条活动：直接改对应条目。
+- 新增活动：追加新的 `id` 条目；未配置的 id 会被跳过（或走兜底，取决于映射写法）。
+- `category` 必须是 `讲座` / `文体` / `志愿` 之一，否则分类筛选匹配不到。
+- 改完后刷新首页，让 `activity_cache` 重写；详情页与「我的」页从该缓存读取。
+
+### 🖼️ 如何替换 TabBar 图标
+
+把四张 81×81 透明 PNG 放进 `static/tabbar/`：
+
+```
+static/tabbar/home.png
+static/tabbar/home-active.png
+static/tabbar/mine.png
+static/tabbar/mine-active.png
+```
+
+`pages.json` 中 `iconPath` 对应普通态，`selectedIconPath` 对应激活态。保持文件名不变即可，无需改 `pages.json`。
+
+### 🎨 如何修改主题色
+
+- 明亮主色：`composables/useTheme.js` 中的 `LIGHT_PRIMARY`。
+- 暗黑主色：同文件中的 `DARK_PRIMARY`。
+- 若改 `DARK_PRIMARY`，需同步更新 `themeColorLight`（rgba）与 `themeColorRgb`。
+
+### 🚀 构建与发布（微信小程序）
+
+1. HBuilderX 中：**发行 → 小程序-微信**，生成小程序构建产物。
+2. 用微信开发者工具打开生成的 `dist/dev/mp-weixin`（或 `dist/build/mp-weixin`）目录。
+3. 填入自己的 AppID，检查项目后点击 **上传**，到微信平台提交审核发布。
+4. 发布前需在微信公众平台后台把 `jsonplaceholder.typicode.com` 加入 request 合法域名；本地调试可勾选「不校验合法域名」。
 
 ---
 
