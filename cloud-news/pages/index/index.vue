@@ -52,8 +52,8 @@ const isLoading = ref(false)
 const errorMsg = ref('')
 
 // Supabase 配置
-const supabaseUrl = 'https://hisewqjyxadmezeiwnzc.supabase.co' 
-const publishableKey = 'sb_publishable_yedDW1qzLL3nsZySIugLNw_-r4FRFU_'
+const supabaseUrl = '在此填上真实数据' 
+const publishableKey = '在此填上真实数据'
 
 const fetchNews = async () => {
   try {
